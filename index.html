@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>No menosprecies los comienzos — Zacarías 4:6-10; Esdras</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f3f1eb;
+      font-family: 'Montserrat', sans-serif;
+      color: #2b241f;
+      line-height: 1.75;
+    }
+    :root {
+      --accent: #4a6b3a;
+      --accent-dark: #2f4a24;
+      --accent-light: #e8f0e4;
+      --muted: #5e4b3a;
+      --card: #ffffff;
+      --shadow: 0 25px 40px -15px rgba(0,0,0,0.08);
+      --radius: 1.2rem;
+    }
+    .container { max-width: 1280px; margin: 0 auto; padding: 1.5rem; }
+    .church-header { text-align: center; padding: 2rem 0 1rem; border-bottom: 3px solid var(--accent); margin-bottom: 2rem; }
+    .church-name { font-family: 'Merriweather', serif; font-size: 2.2rem; color: var(--accent); font-weight: 800; }
+    .church-motto { color: var(--muted); font-weight: 500; letter-spacing: 1px; }
+    .hero {
+      display: grid; grid-template-columns: 1fr; gap: 2rem;
+      background: linear-gradient(135deg, #f4f9f2, #e8f0e4);
+      border-radius: var(--radius); padding: 2.5rem; margin-bottom: 2.5rem;
+      box-shadow: var(--shadow); border: 1px solid rgba(74,107,58,0.15);
+    }
+    @media (min-width: 800px) { .hero { grid-template-columns: 1.3fr 1fr; } }
+    .hero-content h1 { font-family: 'Merriweather', serif; font-size: 2.8rem; font-weight: 800; color: #2a3a22; line-height: 1.2; margin-bottom: 1rem; }
+    .hero-content h1 .highlight { color: var(--accent); }
+    .eyebrow { background: var(--accent-light); color: var(--accent-dark); display: inline-block; padding: 0.3rem 1.2rem; border-radius: 2rem; font-weight: 700; font-size: 0.8rem; letter-spacing: 1.5px; margin-bottom: 1rem; }
+    .lead { font-size: 1.2rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .hero-image-placeholder { background: linear-gradient(135deg, var(--accent), #6a8f56); border-radius: 1rem; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: white; padding: 2rem; box-shadow: var(--shadow); }
+    .hero-image-placeholder i { font-size: 4rem; margin-bottom: 1rem; }
+    .stats-box { display: flex; justify-content: space-around; background: white; border-radius: 2rem; padding: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+    .stat-number { font-family: 'Merriweather', serif; font-size: 2.5rem; font-weight: 800; color: var(--accent); }
+    .stat-item { text-align: center; padding: 0.2rem 0.8rem; }
+    .magazine-layout { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media (min-width: 960px) { .magazine-layout { grid-template-columns: 2fr 1fr; } }
+    .card { background: var(--card); border-radius: var(--radius); padding: 2rem; margin-bottom: 2rem; box-shadow: 0 12px 30px rgba(0,0,0,0.05); border-left: 6px solid var(--accent); transition: 0.2s; }
+    .card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 2px solid #dce8d6; padding-bottom: 0.8rem; }
+    .card-number { background: var(--accent); color: white; width: 2.8rem; height: 2.8rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.3rem; }
+    .card-title { font-family: 'Merriweather', serif; font-size: 1.9rem; color: #2a3a22; }
+    .quote { border-left: 5px solid var(--accent); background: var(--accent-light); padding: 1.5rem 2rem; margin: 1.8rem 0; border-radius: 0 20px 20px 0; font-style: italic; }
+    .quote-text { font-family: 'Merriweather', serif; font-size: 1.2rem; color: #2f4a24; font-weight: 500; }
+    .quote-text .emphasis { color: var(--accent-dark); font-weight: 800; }
+    .interactive { background: #eef5eb; border-radius: 1rem; padding: 1.2rem; margin: 1.8rem 0; cursor: pointer; transition: 0.2s; text-align: center; border: 1px solid #c5d8bb; font-weight: 500; }
+    .interactive:hover { background: #e0ecdb; transform: translateY(-3px); }
+    .sidebar-card { background: var(--card); border-radius: 1rem; padding: 1.8rem; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    .tag { background: var(--accent-light); color: var(--accent-dark); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700; display: inline-block; margin: 0.2rem; }
+    .footer { text-align: center; border-top: 2px solid #d4e2cc; padding: 2rem; margin-top: 2rem; color: var(--muted); }
+    @media (max-width: 700px) { .hero-content h1 { font-size: 2rem; } .card-title { font-size: 1.5rem; } }
+    .fade-in { animation: fadeUp 0.6s ease forwards; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+    .callout { background: #f4f9f2; border-radius: 0.8rem; padding: 1.2rem; margin: 1.2rem 0; border-left: 4px solid var(--accent-dark); }
+    .callout strong { color: var(--accent-dark); }
+    .illustration-box { background: #faf8f2; border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0; border-left: 4px solid var(--accent-dark); }
+    .illustration-box h4 { font-family: 'Merriweather', serif; color: var(--accent-dark); margin-bottom: 0.5rem; }
+    .point-grid { display: grid; grid-template-columns: 1fr; gap: 0.8rem; margin: 1rem 0; }
+    @media (min-width: 600px) { .point-grid { grid-template-columns: 1fr 1fr; } }
+    .point-item { background: #eef5eb; padding: 0.8rem 1rem; border-radius: 0.8rem; border-left: 3px solid var(--accent); }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="church-header">
+    <div class="church-name">Iglesia Bautista de Sola</div>
+    <div class="church-motto">Solo Cristo Salva</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Sermón — Zacarías 4:6-10; Esdras</div>
+      <h1>No menosprecies <span class="highlight">los comienzos</span></h1>
+      <p class="lead">Dios no desprecia los comienzos pequeños, sino que los usa como el fundamento de lo que Él completará. El que menosprecia los comienzos se pierde de ver la gloria de Dios.</p>
+      <div class="interactive" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})"><i class="fas fa-seedling"></i> Comenzar: Dios no tiene problemas con los comienzos pequeños →</div>
+    </div>
+    <div class="hero-image-placeholder">
+      <i class="fas fa-mountain"></i>
+      <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">"No con ejército, ni con fuerza, sino con mi Espíritu"</h3>
+      <p style="opacity:0.9;">Zacarías 4:6 — La obra se completa por el Espíritu</p>
+    </div>
+  </section>
+
+  <div class="stats-box">
+    <div class="stat-item"><div class="stat-number">2</div><div>Hombres: Zorobabel y Esdras</div></div>
+    <div class="stat-item"><div class="stat-number">4</div><div>Puntos sobre Zorobabel</div></div>
+    <div class="stat-item"><div class="stat-number">3</div><div>Puntos sobre Esdras</div></div>
+    <div class="stat-item"><div class="stat-number">1</div><div>Verdad central: Dios siempre cumple sus propósitos</div></div>
+  </div>
+
+  <div class="magazine-layout">
+    <main>
+      <!-- INTRODUCCIÓN -->
+      <div class="card fade-in" id="intro">
+        <div class="card-header"><div class="card-number">1</div><h2 class="card-title">Introducción: Dios no tiene problemas con los comienzos pequeños</h2></div>
+        <div class="card-content">
+          <p>Hay algo que quiero decirte antes de que prediquemos: <strong>Dios no tiene problemas con los comienzos pequeños. Nosotros sí.</strong></p>
+          <p>Queremos comenzar con lo grandioso. Queremos que el primer día sea el mejor día. Queremos que el primer intento sea el intento perfecto. Pero Dios no trabaja así. Dios trabaja con lo pequeño. Con lo humilde. Con lo que parece insignificante. Y luego lo hace crecer.</p>
+          <p>La historia de la iglesia está llena de hombres y mujeres que comenzaron con nada, y Dios los usó para transformar el mundo.</p>
+
+          <div class="illustration-box">
+            <h4><i class="fas fa-globe-asia"></i> Hudson Taylor</h4>
+            <p>Cuando llegó a China en 1854, tenía 21 años. No tenía dinero. No tenía apoyo de ninguna denominación. No hablaba el idioma. Se vistió como chino, comió como chino, vivió como chino. Al principio, nadie se convirtió. Nadie respondió. Los primeros años fueron un fracaso a los ojos de los hombres. Pero Taylor no menospreció el comienzo. Siguió plantando. Siguió orando. Siguió sirviendo. Y al final de su vida, la Misión al Interior de China había establecido más de 200 estaciones misioneras, con más de 800 misioneros, y decenas de miles de chinos habían creído en Cristo. <strong>Dios usó un comienzo pequeño para hacer algo grande.</strong></p>
+          </div>
+
+          <div class="illustration-box">
+            <h4><i class="fas fa-shoe-prints"></i> William Carey</h4>
+            <p>Era un zapatero. No tenía educación formal. No tenía títulos. Cuando propuso ir a la India como misionero, un líder de su época le dijo: "Joven, si Dios quiere convertir a los paganos, lo hará sin tu ayuda." Carey menospreciado. Su comienzo ridiculizado. Pero Carey fue a la India. Y allí tradujo la Biblia a más de 30 idiomas. Y es conocido hoy como el padre de las misiones modernas. <strong>Dios usó un comienzo pequeño para hacer algo grande.</strong></p>
+          </div>
+
+          <div class="illustration-box">
+            <h4><i class="fas fa-fire"></i> La iglesia primitiva</h4>
+            <p>Comenzó con 120 personas en un aposento alto. Sin edificios. Sin presupuesto. Sin influencia. Doce hombres, la mayoría pescadores. Y esos doce hombres, con el poder del Espíritu Santo, trastornaron el mundo. <strong>Dios usó un comienzo pequeño para hacer algo grande.</strong></p>
+          </div>
+
+          <p>Y hoy, muchos de nosotros estamos menospreciando nuestros comienzos. Miramos nuestra iglesia y decimos: "Somos muy pocos." Miramos nuestro ministerio y decimos: "No tenemos recursos." Miramos nuestra vida y decimos: "No he logrado nada." Y nos desanimamos. <strong>Pero el problema no es el tamaño del comienzo. El problema es que menospreciamos lo que Dios está haciendo.</strong></p>
+          <p>Zacarías fue profeta contemporáneo con la reconstrucción del templo de Dios. En el 586, el templo había sido destruido; años después, Ciro da permiso para reconstruirlo. Zorobabel fue el encargado de guiar el primer regreso del pueblo. Reconstruir fue todo un desafío. Y algunos menospreciaban el comienzo, menospreciaban este inicio, y las capacidades que tenía el pueblo para llevar a cabo la obra; al mirarlos, no parecía probable que ellos pudieran lograrlo.</p>
+          <p>Entonces Dios dijo que los que menospreciaron los modestos comienzos se alegrarían. Ciertamente, los enemigos tenían algo de razón, estos hombres no tenían los recursos, pero el centro de esta historia nos recuerda que <strong>cuando Dios tiene un propósito, nadie puede detenerlo.</strong></p>
+          <p>Hoy vamos a ver esto en la historia de Zorobabel y Esdras. Dos hombres que lideraron la reconstrucción del templo y del pueblo de Israel después del cautiverio. Y vamos a ver cómo Dios honró los comienzos humildes y completó la obra que Él había comenzado.</p>
+          <div class="quote">
+            <div class="quote-text"><strong>Proposición:</strong> Dios no desprecia los comienzos pequeños, sino que los usa como el fundamento de lo que Él completará. El que menosprecia los comienzos se pierde de ver la gloria de Dios.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PUNTO I: ZOROBABEL -->
+      <div class="card fade-in">
+        <div class="card-header"><div class="card-number">2</div><h2 class="card-title">I. Zorobabel: la reconstrucción del templo</h2></div>
+        <div class="card-content">
+          <h4 style="font-family:Merriweather; color:var(--accent-dark); margin-top:1rem;">a. Antes de restaurar el edificio, restauraron la adoración</h4>
+          <div class="quote">
+            <div class="quote-text">"Desde el primer día del mes séptimo comenzaron a ofrecer holocaustos a Jehová; pero los cimientos del templo de Jehová no se habían echado todavía."<br><span style="font-size:0.9rem; font-style:normal;">— Esdras 3:6</span></div>
+          </div>
+          <p>Observen el orden. El pueblo había regresado del cautiverio. Habían vuelto a Jerusalén. Y lo primero que hicieron no fue reconstruir el templo. <strong>Lo primero que hicieron fue restaurar la adoración. Antes de restaurar el edificio, restauraron el altar.</strong></p>
+          <p>Esto es tremendo, hermanos. Porque nos enseña que la reconstrucción verdadera comienza por dentro, no por fuera. Comienza con el corazón, no con las paredes. Comienza con la adoración, no con la arquitectura.</p>
+          <p>El pueblo entendió que no podían reconstruir la casa de Dios si primero no reconstruían su relación con Dios. No podían levantar el templo si primero no levantaban su corazón. Y eso es lo que nosotros debemos aprender. Es necesario recordar que la idolatría fue la causa principal del cautiverio. Dios estaba castigando a su propio pueblo por su rebelión. Era un gran punto de partida pensar que en este momento estaban revirtiendo lo que les llevó a fallar.</p>
+          <p><strong>Nunca es tarde para volver a empezar. Nunca es tarde para reconstruir. Nunca es tarde para hacer las cosas bien. Las derrotas del pasado no impiden las victorias del presente.</strong></p>
+          <div class="callout">
+            <p>Muchas veces queremos reconstruir nuestras vidas. Queremos reconstruir nuestras familias. Queremos reconstruir nuestras iglesias. Y comenzamos por lo externo. Pintamos las paredes. Cambiamos los muebles. Reorganizamos los programas. Pero no restauramos la adoración. No restauramos la oración. No restauramos la relación con Dios y la lectura de la Palabra.</p>
+            <p>Todo proyecto que emprendemos, todo plan, todo sueño, debe comenzar de adentro hacia afuera. Por hacer las cosas a la manera de Dios, en los términos de Dios. Y así nos va. Porque <strong>si el altar está roto, el templo no se sostiene. Si la adoración está muerta, el edificio está vacío.</strong> Antes de restaurar el edificio, hay que restaurar la adoración. Y lo más importante es adorar a Dios en sus términos, y no en los nuestros.</p>
+          </div>
+          <p><strong>No menosprecies los comienzos. El comienzo de toda restauración es la adoración.</strong></p>
+
+          <h4 style="font-family:Merriweather; color:var(--accent-dark); margin-top:1.5rem;">b. Alegría por los comienzos, llanto por un nuevo comienzo</h4>
+          <div class="quote">
+            <div class="quote-text">"Y cuando los albañiles del templo de Jehová echaban los cimientos, pusieron a los sacerdotes vestidos de sus ropas, con trompetas, y a los levitas hijos de Asaf con címbalos, para que alabasen a Jehová, según la ordenanza de David rey de Israel. Y cantaban, alabando y dando gracias a Jehová, y diciendo: Porque él es bueno, porque para siempre es su misericordia sobre Israel. Y todo el pueblo aclamaba con gran júbilo, porque se echaban los cimientos de la casa de Jehová. Pero muchos de los sacerdotes y levitas, y jefes de casas paternas, ancianos que habían visto la casa primera, viendo echar los cimientos de esta casa, lloraban en alta voz, mientras muchos otros daban grandes gritos de alegría. Y no podía distinguir el pueblo el clamor de los gritos de alegría, de la voz del llanto; porque clamaba el pueblo con gran júbilo, y el ruido se oía de lejos."<br><span style="font-size:0.9rem; font-style:normal;">— Esdras 3:10-13</span></div>
+          </div>
+          <p>Este es uno de los pasajes más emotivos de toda la Escritura. Cuando echaron los cimientos del nuevo templo, hubo dos reacciones. Los jóvenes gritaban de alegría. Los ancianos lloraban de tristeza.</p>
+          <p>¿Por qué? Porque los ancianos habían visto el templo de Salomón. Habían visto su gloria. Habían visto su esplendor. Y este nuevo templo, comparado con aquel, era nada. Era pequeño. Era humilde. Era pobre. Y lloraban.</p>
+          <p>Pero fíjense en algo: <strong>no lloraban porque estuvieran en contra. Lloraban porque recordaban. Lloraban porque el nuevo comienzo les recordaba lo que habían perdido. Lloraban porque el nuevo templo no se comparaba con el antiguo.</strong></p>
+          <p>Esto era complejo. Ellos fueron esclavos, arrancados de su tierra y su parentela a la fuerza, obligados a vivir en tierra extranjera, en otra cultura, otro idioma. Ellos se fueron con la esperanza de una promesa, que después de 70 años, Dios les permitiría volver a esta tierra. Hoy estaban viendo el cumplimiento de esa promesa.</p>
+          <div class="callout">
+            <p>Y algo importante aquí. Aunque podemos volver a comenzar, <strong>tenemos que aprender a cuidar lo que tenemos, lo que Dios ha puesto en nuestras manos.</strong> Ellos no hubieran perdido el templo, ni su identidad, si hubieran sido obedientes. A veces es mejor ni siquiera preguntarse qué sucedería si sigo por el camino que sé que no debo seguir.</p>
+            <p>El llanto no era pecado. Era emoción. Era amor por la casa de Dios. <strong>Lo que no podemos hacer es menospreciar lo que Dios está haciendo ahora.</strong></p>
+          </div>
+          <p>Dios estaba haciendo algo nuevo. Y aunque era pequeño, era el comienzo de algo grande. Los que menospreciaron los comienzos se perdieron de ver la gloria de Dios. Y nosotros no podemos hacer lo mismo.</p>
+          <p><strong>No menosprecies los comienzos. No importa cuán pequeño sea. No importa cuán humilde sea. No importa cuán diferente sea de lo que era antes. Dios está en el comienzo. Y Dios completará lo que comenzó.</strong> Los nuevos comienzos pueden ser muy diferentes a lo que ya conocías, pero eso no los hace malos. A. Einstein dijo: "La definición de locura es hacer siempre lo mismo, y esperar un resultado diferente." A veces Dios tiene que romper por completo nuestra comodidad, para darnos un nuevo comienzo.</p>
+
+          <h4 style="font-family:Merriweather; color:var(--accent-dark); margin-top:1.5rem;">c. ¿Desánimo o propósito? Los enemigos fueron usados por Dios</h4>
+          <div class="quote">
+            <div class="quote-text">"Entonces el pueblo de la tierra intimidó al pueblo de Judá, y lo atemorizó para que no edificara. Y sobornaron contra ellos consejeros para frustrar sus propósitos, todo el tiempo de Ciro rey de Persia, hasta el reinado de Darío rey de Persia."<br><span style="font-size:0.9rem; font-style:normal;">— Esdras 4:4-5</span></div>
+          </div>
+          <p>Aquí está el problema. Cuando comenzaron a reconstruir, los enemigos vinieron. Primero, los intimidaron. Luego, sobornaron consejeros para frustrar sus propósitos. Y la obra se detuvo. Se detuvo por años. Se detuvo por décadas.</p>
+          <p>Hermanos, sería muy infantil pensar que vamos a hacer la voluntad de Dios sin oposición. Esto es lo más inmaduro que pudiéramos pensar. <strong>Cuando estamos en la voluntad de Dios, estamos en la mira del enemigo.</strong> Él levantará todo cuanto pueda en nuestra contra. Él ha visto muchas veces que los pequeños comienzos terminan mal para él, por eso no quiere que pase de ahí.</p>
+          <p>La oposición y la resistencia al cambio es parte del proceso. Nos resistimos porque nos sentimos cómodos donde estamos, haciendo lo que hacemos. No queremos cambiar. Entonces nos oponemos a todo lo que cambie nuestro mundo. Otros se levantan por envidia, por contienda, o por cualquier cosa. Este era el caso de los enemigos de Zorobabel.</p>
+          <p>Y aquí es donde muchos se desaniman. Comienzan bien. Comienzan con fe. Comienzan con esperanza. Y luego vienen los problemas. Vienen los enemigos. Vienen las críticas. Vienen las oposiciones. Vienen las puertas cerradas. Y se desaniman. Y abandonan. Y dejan la obra a medias.</p>
+          <div class="callout">
+            <p>Pero fíjense en algo que dice el texto. "Sobornaron contra ellos consejeros para frustrar sus propósitos." Los enemigos intentaron destruir la obra. <strong>Pero Dios usó a esos mismos enemigos para apoyar su culminación.</strong></p>
+            <p>¿Cómo? Cuando los enemigos escribieron cartas al rey de Persia para detener la obra, el rey ordenó que se detuviera. Pero cuando la obra se detuvo, los profetas Hageo y Zacarías vinieron y animaron al pueblo a seguir. Y el pueblo se levantó y volvió a construir. Y cuando los enemigos escribieron de nuevo, esta vez el rey ordenó que se apoyara la obra. Y dio recursos. Y dio permiso. Y la obra se completó.</p>
+            <p><strong>Dios usó a los enemigos para completar la obra. Los mismos que intentaron destruirla, fueron usados para apoyarla.</strong> Eso es lo que Dios hace. Muchas veces, el propósito de Dios viene disfrazado de oposición. Viene disfrazado de burla. El enemigo se levanta, pero Dios le usa como entiende.</p>
+          </div>
+          <p>Los propios enemigos debían suplirles. Aquí está el principio: <strong>Dios tiene todos los recursos necesarios para completar aquello que él te ha llamado a hacer. Comienza la misión, Dios enviará los medios.</strong></p>
+          <p>El tema de menospreciar los comienzos roza el peligro de menospreciar a Dios. Cuando miramos los recursos que ellos tenían, eran limitados, verdaderamente parecía necesitarlo. Pero la clave estaba en que era Dios quien estaba haciendo esta obra.</p>
+
+          <h4 style="font-family:Merriweather; color:var(--accent-dark); margin-top:1.5rem;">d. La obra se completa por el Espíritu de Dios, no por poder humano</h4>
+          <div class="quote">
+            <div class="quote-text">"Entonces respondió y me habló diciendo: Esta es palabra de Jehová a Zorobabel, que dice: <span class="emphasis">No con ejército, ni con fuerza, sino con mi Espíritu, ha dicho Jehová de los ejércitos.</span> ¿Quién eres tú, oh gran monte? Delante de Zorobabel serás reducido a llanura; él sacará la primera piedra con aclamaciones de: Gracia, gracia a ella. Y vino a mí palabra de Jehová, diciendo: Las manos de Zorobabel echarán el cimiento de esta casa, y sus manos la acabarán; y conocerás que Jehová de los ejércitos me envió a vosotros."<br><span style="font-size:0.9rem; font-style:normal;">— Zacarías 4:6-9</span></div>
+          </div>
+          <p>Este es el corazón del mensaje. Dios le dice a Zorobabel: <strong>"No con ejército, ni con fuerza, sino con mi Espíritu."</strong></p>
+          <p>La reconstrucción del templo no se lograría por poder humano, sino por el Espíritu de Dios. No con ejércitos. No con recursos. No con estrategias. Con el Espíritu de Dios.</p>
+          <p>Y fíjense en la promesa: <strong>"Las manos de Zorobabel echarán el cimiento de esta casa, y sus manos la acabarán."</strong> Dios promete que el que comenzó la obra, también la terminará. El que echó los cimientos, también pondrá la última piedra. <strong>Dios no abandona la obra a mitad de camino.</strong></p>
+          <p>Y luego, en Zacarías 4:10, dice: <strong>"¿Quién menospreció el día de los pequeños comienzos?"</strong> La obra comenzó pequeña. Pero Dios la completaría. Y los que menospreciaron el comienzo, se avergonzarían cuando vieran el final.</p>
+          <p>Esta no era la obra de Zorobabel, no era la misión de Esdras, era el plan de Dios, y él siempre cumple su palabra.</p>
+          <div class="callout">
+            <p>Esto es tremendo, hermanos. Porque nos enseña que <strong>Dios tiene todos los recursos necesarios para completar la misión que te ha encomendado. No necesitas ejércitos. No necesitas poder. No necesitas dinero. Necesitas el Espíritu de Dios.</strong> Debemos hacer la obra de Dios en dependencia del Espíritu Santo.</p>
+            <p>Y si Dios comenzó la obra en ti, Él la terminará. Si Dios echó los cimientos, Él pondrá la última piedra. <strong>Dios no abandona lo que comienza.</strong></p>
+            <p>¿Y tú? ¿Estás confiando en tus fuerzas? ¿Estás confiando en tus recursos? ¿Estás confiando en tus estrategias? No menosprecies los comienzos. Pero tampoco confíes en tus fuerzas. Confía en el Espíritu de Dios. Porque Él es el que comenzó la obra. Y Él es el que la completará.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PUNTO II: ESDRAS -->
+      <div class="card fade-in">
+        <div class="card-header"><div class="card-number">3</div><h2 class="card-title">II. Esdras: la reconstrucción del pueblo</h2></div>
+        <div class="card-content">
+          <h4 style="font-family:Merriweather; color:var(--accent-dark); margin-top:1rem;">a. Reconstrucción espiritual antes que organizacional</h4>
+          <div class="quote">
+            <div class="quote-text">"Porque Esdras había preparado su corazón para inquirir la ley de Jehová y para cumplirla, y para enseñar en Israel sus estatutos y decretos."<br><span style="font-size:0.9rem; font-style:normal;">— Esdras 7:10</span></div>
+          </div>
+          <p>Esdras no era un arquitecto. Era un escriba. No vino a reconstruir el templo. Vino a reconstruir el pueblo. Y lo primero que hizo fue preparar su corazón.</p>
+          <p>Fíjense en el orden. Primero, preparó su corazón. Segundo, inquirió la ley de Jehová. Tercero, la cumplió. Cuarto, la enseñó. <strong>Ese es el orden de la reconstrucción verdadera.</strong></p>
+          <p>La reconstrucción es espiritual y emocional antes que organizacional. No podemos reconstruir la iglesia si primero no reconstruimos nuestro corazón. No podemos reconstruir la familia si primero no reconstruimos nuestra relación con Dios. No podemos reconstruir el pueblo si primero no reconstruimos nuestra propia vida.</p>
+          <p>Esdras no vino a organizar. Vino a espiritualizar. No vino a estructurar. Vino a transformar. No vino a administrar. Vino a enseñar. Y eso es lo que necesitamos hoy.</p>
+          <div class="callout">
+            <p>Debemos notar que antes de asumir la misión, este hombre se preparó. Él no estaba vacío, la tenía para dar. <strong>Dios no escogió a hombres perfectos, pero tampoco escogió a hombres vacíos.</strong> Esdras había dispuesto su corazón. Él se había preparado, y cuando Dios le llamó a esta misión, estaba listo.</p>
+            <p>Ilustración de David. Dios lo había preparado. Siempre habrá alguien preparándose en secreto, que estará listo para servir a Dios cuando sea el tiempo. Tú puedes ser esa persona. Algunos dicen: no es que no tengo los recursos, es que no sé dónde voy a enseñar. Hermanos, <strong>comienza la misión, Dios enviará los medios.</strong></p>
+          </div>
+
+          <h4 style="font-family:Merriweather; color:var(--accent-dark); margin-top:1.5rem;">b. Esdras asume los pecados del pueblo como suyos</h4>
+          <div class="quote">
+            <div class="quote-text">"Y ahora, ¿qué diremos, oh Dios nuestro, después de esto? Porque hemos dejado tus mandamientos."<br><span style="font-size:0.9rem; font-style:normal;">— Esdras 9:10</span></div>
+          </div>
+          <div class="quote">
+            <div class="quote-text">"Oh Jehová Dios de Israel, tú eres justo, puesto que hemos quedado un remanente que ha escapado, como en este día. Henos aquí delante de ti en nuestros delitos; porque no es posible estar delante de ti a causa de esto."<br><span style="font-size:0.9rem; font-style:normal;">— Esdras 9:15</span></div>
+          </div>
+          <p>Esdras no culpó a los babilonios. No culpó a los asirios. No culpó a los enemigos. Él dijo: <strong>"Hemos dejado tus mandamientos." "Henos aquí delante de ti en nuestros delitos."</strong></p>
+          <p>El problema no era de los babilonios. No era de los asirios. El problema era la idolatría del pueblo. El cautiverio no fue un accidente. No fue una injusticia. Fue el resultado del pecado del pueblo.</p>
+          <p>Y Esdras lo entendió. No se justificó. No echó la culpa a otros. <strong>Asumió los pecados del pueblo como suyos. Se identificó con ellos. Se humilló delante de Dios. Y oró.</strong></p>
+          <p>Esto es lo que necesitamos hoy. Necesitamos líderes que asuman los pecados del pueblo. Necesitamos hombres que no culpen a otros, sino que se humillen delante de Dios. Necesitamos hombres como Esdras.</p>
+          <p><strong>No puede haber reconstrucción espiritual sin arrepentimiento. Dios no nos va a usar si no estamos dispuestos a reconocer nuestros errores.</strong></p>
+
+          <h4 style="font-family:Merriweather; color:var(--accent-dark); margin-top:1.5rem;">c. La restauración trae consigo tomar decisiones difíciles</h4>
+          <div class="quote">
+            <div class="quote-text">"Levántate, porque esta es tu obligación, y nosotros estaremos contigo; esfuérzate, y pon mano a la obra."<br><span style="font-size:0.9rem; font-style:normal;">— Esdras 10:4</span></div>
+          </div>
+          <p>La restauración no es fácil. La restauración requiere decisiones difíciles. El pueblo había tomado mujeres extranjeras. Había mezclado su fe con la idolatría. Y para restaurar la relación con Dios, tenían que tomar una decisión dolorosa: separarse de esas mujeres y de esos hijos.</p>
+          <p>No era fácil. No era popular. No era cómodo. Pero era necesario. Porque <strong>la restauración trae consigo tomar decisiones difíciles.</strong></p>
+          <p>Y aquí es donde muchos se detienen. Quieren restauración, pero no quieren dolor. Quieren ser restaurados, pero no quieren soltar. Quieren ser sanados, pero no quieren cortar. Y así no se restaura nada.</p>
+          <div class="callout">
+            <p>Hermanos, este es el punto de la madurez y el crecimiento, que es más difícil. Este es el punto en el que se detiene la mayoría de los cristianos. A la hora de escoger. Cuando llega el momento de renunciar. Cuando llega el momento de las decisiones difíciles. Hay cosas a las que quieres renunciar, y te da trabajo, pero te esfuerzas. Pero hay otras, que aunque te están destruyendo, las amas demasiado.</p>
+            <p><strong>La restauración requiere que sueltes lo que te está alejando de Dios. Requiere que cortes lo que te está destruyendo. Requiere que tomes decisiones difíciles. Pero esas decisiones son el camino a la libertad.</strong></p>
+            <p>La oposición a la reconstrucción del templo vino de afuera, pero la oposición a la restauración espiritual venía de adentro. Nosotros nos volvemos nuestro mayor enemigo cuando de renunciar se trata.</p>
+            <p>Y quiero que pienses por un momento, ¿a qué tienes que renunciar tú? Dios lo ha tratado contigo, tú lo sabes, te está dañando, te está alejando, no te deja tiempo para Dios. No sé lo que es, pero es bueno que pienses en este día: <strong>¿qué me está deteniendo, a qué tengo que renunciar?</strong></p>
+          </div>
+          <p><strong>No menosprecies los comienzos. La restauración verdadera requiere decisiones difíciles.</strong></p>
+        </div>
+      </div>
+
+      <!-- APLICACIÓN -->
+      <div class="card fade-in">
+        <div class="card-header"><div class="card-number">4</div><h2 class="card-title">Aplicación: No menosprecies los comienzos</h2></div>
+        <div class="card-content">
+          <p>Hermanos, no menosprecies los comienzos.</p>
+          <div class="point-grid">
+            <div class="point-item"><strong>No menosprecies tu comienzo.</strong> No importa cuán pequeño sea. No importa cuán humilde sea. No importa cuán imperfecto sea. Dios está en el comienzo. Y Dios completará lo que comenzó.</div>
+            <div class="point-item"><strong>No menosprecies el comienzo de tu iglesia.</strong> No importa cuán pocos sean. No importa cuán limitados sean los recursos. No importa cuán grande sea el desafío. Dios está en el comienzo. Y Dios completará lo que comenzó.</div>
+            <div class="point-item"><strong>No menosprecies el comienzo de tu ministerio.</strong> No importa cuán pequeño sea. No importa cuán insignificante parezca. No importa cuán lento sea el crecimiento. Dios está en el comienzo. Y Dios completará lo que comenzó.</div>
+            <div class="point-item"><strong>No menosprecies el comienzo de tu familia.</strong> No importa cuán difícil sea. No importa cuán lejos parezca estar la respuesta. Dios está en el comienzo. Y Dios completará lo que comenzó.</div>
+          </div>
+          <p style="text-align: center; font-size: 1.2rem; font-family: 'Merriweather', serif; color: var(--accent); margin-top: 1rem;"><strong>No menosprecies el día de los pequeños comienzos.</strong></p>
+          <p><strong>Dios tiene todos los recursos necesarios para completar la misión que te ha encomendado. Dios no te va a abandonar a mitad de camino. El que comenzó la buena obra en ti, la perfeccionará hasta el día de Cristo Jesús.</strong></p>
+          <p>No menosprecies los comienzos. Porque el que menosprecia los comienzos, a la larga, termina menospreciando a Dios. Recuerda que no se trata de tus recursos, sino de los recursos de Dios.</p>
+        </div>
+      </div>
+
+      <!-- CONCLUSIÓN -->
+      <div class="card fade-in">
+        <div class="card-header"><div class="card-number">5</div><h2 class="card-title">Conclusión: Dios siempre cumple sus propósitos</h2></div>
+        <div class="card-content">
+          <p>Hermanos, quiero que se queden con una sola idea esta mañana. <strong>Dios siempre cumple sus propósitos.</strong></p>
+          <p>Los enemigos de Zorobabel hicieron todo lo posible para detener la obra. Intimidaron al pueblo. Sobornaron consejeros. Escribieron cartas al rey. Y la obra se detuvo por años. Parecía que habían ganado. Parecía que el templo nunca se reconstruiría. Parecía que el propósito de Dios había fracasado.</p>
+          <p style="text-align: center; font-size: 1.15rem; font-family: 'Merriweather', serif; color: var(--accent-dark); margin: 1rem 0;"><strong>Pero Dios siempre cumple sus propósitos.</strong></p>
+          <p>Los ancianos lloraron cuando vieron los cimientos del nuevo templo. Recordaban la gloria del anterior. Y les parecía poco. Les parecía pobre. Les parecía insignificante. Parecía que Dios había comenzado algo que no podría terminar.</p>
+          <p style="text-align: center; font-size: 1.15rem; font-family: 'Merriweather', serif; color: var(--accent-dark); margin: 1rem 0;"><strong>Pero Dios siempre cumple sus propósitos.</strong></p>
+          <p>Esdras llegó a Jerusalén y encontró al pueblo mezclado con la idolatría. Habían tomado mujeres extranjeras. Habían olvidado la ley de Dios. Parecía imposible restaurarlos. Parecía que el pueblo estaba demasiado lejos. Parecía que ya no había esperanza.</p>
+          <p style="text-align: center; font-size: 1.15rem; font-family: 'Merriweather', serif; color: var(--accent-dark); margin: 1rem 0;"><strong>Pero Dios siempre cumple sus propósitos.</strong></p>
+          <p>Y hoy, tú estás en medio de tu propio proceso. Tal vez hoy la obra está detenida. Tal vez hoy los enemigos parecen haber ganado. Tal vez hoy lloras al recordar lo que perdiste. Tal vez hoy te preguntas si vale la pena seguir. Tal vez hoy sientes que has fallado demasiadas veces.</p>
+          <p style="text-align: center; font-size: 1.2rem; font-family: 'Merriweather', serif; color: var(--accent-dark); margin: 1rem 0;"><strong>Pero Dios siempre cumple sus propósitos.</strong></p>
+          <p>No menosprecies ese pequeño paso de fe. No menosprecies esa oración que hiciste entre lágrimas. No menosprecies ese intento de volver a empezar. No menosprecies esa decisión de dejar atrás lo que te destruía. <strong>Porque Dios no menosprecia lo pequeño. Dios lo usa. Dios lo bendice. Dios lo multiplica.</strong></p>
+          <p>Y un día, cuando mires atrás, verás que lo que comenzó pequeño, Dios lo hizo grande. Lo que comenzó débil, Dios lo hizo fuerte. Lo que comenzó humilde, Dios lo hizo glorioso.</p>
+          <div class="callout" style="border-left-color: var(--accent-dark); background: #e8f0e4;">
+            <p style="font-size:1.1rem;">Porque Dios siempre cumple sus propósitos. Así que levántate. Esfuérzate. Pon mano a la obra. Porque esta es tu obligación. Y Dios estará contigo.</p>
+            <p><strong>No menosprecies los comienzos. Porque el que menosprecia los comienzos, se pierde de ver la gloria de Dios.</strong></p>
+            <p style="text-align: center; font-size: 1.2rem; margin-top: 0.8rem;"><strong>Y Dios siempre cumple sus propósitos.</strong></p>
+          </div>
+          <p style="text-align: right; margin-top: 1.5rem; font-weight: 700;">Rolando Y. Desdín García.</p>
+        </div>
+      </div>
+    </main>
+
+    <aside>
+      <div class="sidebar-card"><h3 style="font-family:Merriweather;">Resumen del mensaje</h3>
+        <p><strong>Zorobabel:</strong> Reconstruyó el templo. Primero restauró la adoración, luego el edificio.</p>
+        <p><strong>Esdras:</strong> Reconstruyó el pueblo. Preparó su corazón, asumió el pecado, tomó decisiones difíciles.</p>
+        <p><strong>Verdad central:</strong> Dios siempre cumple sus propósitos.</p>
+        <div class="tags" style="margin-top:1rem;">
+          <span class="tag">Zacarías 4</span> <span class="tag">Esdras</span> <span class="tag">Zorobabel</span>
+          <span class="tag">Comienzos pequeños</span> <span class="tag">Espíritu de Dios</span> <span class="tag">Restauración</span>
+        </div>
+      </div>
+
+      <div class="sidebar-card"><h3 style="font-family:Merriweather;">Ilustraciones</h3>
+        <p><strong>Hudson Taylor:</strong> 21 años, sin dinero, sin apoyo. Dios usó un comienzo pequeño.</p>
+        <p><strong>William Carey:</strong> Zapatero, ridiculizado. Tradujo la Biblia a 30 idiomas.</p>
+        <p><strong>Iglesia primitiva:</strong> 120 personas en un aposento alto. Trastornaron el mundo.</p>
+        <p style="margin-top:0.8rem;"><em>"Dios no menosprecia lo pequeño. Dios lo usa."</em></p>
+      </div>
+
+      <div class="sidebar-card"><h3 style="font-family:Merriweather;">Los enemigos usados por Dios</h3>
+        <p>Los enemigos de Zorobabel intentaron detener la obra. Escribieron cartas al rey. La obra se detuvo.</p>
+        <p>Pero Dios usó a esos mismos enemigos para que el rey ordenara apoyar la obra y diera recursos.</p>
+        <p><strong>"Dios tiene todos los recursos necesarios para completar aquello que él te ha llamado a hacer."</strong></p>
+      </div>
+
+      <div class="sidebar-card" style="background:#e8f0e4; border:1px solid #c5d8bb;">
+        <h3 style="font-family:Merriweather;">Pregunta final</h3>
+        <p>¿Estás menospreciando tu comienzo? ¿Estás confiando en tus fuerzas o en el Espíritu de Dios? <strong>No menosprecies los comienzos. Porque el que menosprecia los comienzos, se pierde de ver la gloria de Dios.</strong></p>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <p>Iglesia Bautista de Sola — Solo Cristo Salva</p>
+    <p>“No menosprecies los comienzos” — Zacarías 4:6-10; Esdras</p>
+    <p>Rolando Y. Desdín García</p>
+  </footer>
+</div>
+
+<script>
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
